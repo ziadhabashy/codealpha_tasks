@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Image Gallery</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>Image Gallery</h1>
+        <p>Hover effects, filters, responsive grid, and a lightbox with next/prev navigation.</p>
+      </div>
+    </header>
+
+    <div class="toolbar" id="toolbar">
+      <button class="chip active" data-filter="all">All</button>
+      <button class="chip" data-filter="nature">Nature</button>
+      <button class="chip" data-filter="city">City</button>
+      <button class="chip" data-filter="people">People</button>
+
+      <div class="search">
+        <input id="searchInput" type="text" placeholder="Search by title…" />
+      </div>
+    </div>
+
+    <section class="grid" id="gallery"></section>
+  </div>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lb-panel" role="dialog" aria-modal="true" aria-label="Image viewer">
+      <div class="lb-top">
+        <div>
+          <p class="lb-title" id="lbTitle">Title</p>
+          <p class="lb-sub" id="lbCategory">Category</p>
+        </div>
+        <div class="lb-actions">
+          <button class="icon-btn" id="downloadBtn" title="Open image in new tab">⤓</button>
+          <button class="icon-btn primary" id="closeBtn" title="Close (Esc)">✕</button>
+        </div>
+      </div>
+
+      <div class="lb-body">
+        <button class="nav-btn prev" id="prevBtn" title="Previous (←)">‹</button>
+        <img class="lb-img" id="lbImg" alt="Selected image" />
+        <button class="nav-btn next" id="nextBtn" title="Next (→)">›</button>
+      </div>
+
+      <div class="lb-foot">
+        <div class="counter" id="counter">1 / 1</div>
+        <div class="hint">Keys: <kbd>Esc</kbd> close • <kbd>←</kbd>/<kbd>→</kbd> navigate</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./main.js"></script>
+</body>
+</html>
